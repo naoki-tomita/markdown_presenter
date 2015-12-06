@@ -50,3 +50,24 @@ rails server -b $IP -p $PORT
 rails destroy model User
 ```
 
+## 3
+filesというフォルダにファイルをおくことにする
+ファイルアップロードする機能を作ろう
+
+ファイルアップロード機能の実現方法はいろいろあるっぽい。
+
+* データベースで実現する方法
+  * データベースにファイル名とファイルのバイナリを登録する方法
+* ファイルをフォルダに保存しておいて、表示の時にアップロード済みのファイルを表示する方法
+
+データベースを使うのはめんどくさそうなので、現物のファイルを使う。
+、と思ったのだけど、やり方がのってないので、諦めた。
+
+なので、まずはファイルを管理するやつ
+|id|integer|
+|filename|string|
+|file|binary|
+
+```
+rails generate scaffold User filename:string file:binary
+```
