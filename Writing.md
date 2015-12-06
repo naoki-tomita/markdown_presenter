@@ -69,5 +69,12 @@ filesというフォルダにファイルをおくことにする
 |file|binary|
 
 ```
-rails generate scaffold User filename:string file:binary
+rails generate scaffold File filename:string file:binary
 ```
+
+viewsのindex.htmlは/upload_filesにアクセスした時に表示されるやつ。
+他にも、new.htmlとか、show、editなどあるが、それらはデータをいじる時に使用されるページを定義している。
+アップロードするんなら、editとか、newのところでファイルアップロードできるようにすると良さそうである。
+
+### アップロードできるようにする
+した。
