@@ -1,2 +1,52 @@
 # 12/04
-* まずはチュートリアルを見ながらhello worldで試してみる。
+## 1
+まずはチュートリアルを見ながらhello worldで試してみる。
+hello worldは余裕だった。
+* config/route.rbでrailsアプリのURL設定をしている。
+  * たとえば、下記のようなコードでルートURLを設定可能
+``` ruby
+root 'application#hello'
+```
+ルートURLにアクセスすると`app/cpmtroller/application_controller.rb`のhelloメソッドを実行するという意味になる(っぽい)。<br>
+_controllerの部分は勝手に無視してくれるのかな。よく知らんけど。
+
+## 2
+次に、ツイッターみたいなのを作る。
+
+# 12/06
+## 1
+ツイッターのデータモデル
+* ユーザー情報
+
+| id | integer |
+| name | string |
+| mail_address | string |
+
+* ツイート情報
+
+| id | integer |
+| tweet | string |
+| user_id | integer |
+
+railsではデータモデルはコマンドで作るらしい。
+また、ここでIDは指定してないけど、railsはかってにやってくれるっぽい。
+
+``` shell
+rails generate scaffold User name:string mail_address:string
+```
+
+そしたら、`bundle exec rake db:migrate`でデータベース生成
+
+これで動くようになる
+```
+rails server -b $IP -p $PORT
+```
+
+## 2
+では、ファイルを管理できるようなデータベースを作ろう
+作ったやつは削除
+
+```
+rails destroy model User
+```
+
