@@ -44,6 +44,6 @@ group :development, :test do
   
   gem 'github-markdown', '~> 0.6.9'
 
-  gem 'coderay', '~> 1.1'
+  gem '', '~> 1.1'
 end
 
